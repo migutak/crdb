@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  api: 'https://jsonplaceholder.typicode.com/users',
+  clientid: '',
+  clientsecret: '',
+  auth: ''
 };

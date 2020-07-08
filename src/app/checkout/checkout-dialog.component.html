@@ -1,0 +1,30 @@
+<h3>
+    Checkout
+    <button style="float: right;" mat-icon-button [mat-dialog-close]>
+        <mat-icon>cancel</mat-icon>
+    </button>
+</h3>
+
+<div>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Total: {{ subTot | currency:'USD':'symbol':'1.2-2' }}</mat-card-title>
+            <mat-card-subtitle>
+                tax: {{ tax | currency:'USD':'symbol':'1.2-2' }}
+                <br />
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-form-field appearance="fill">
+            <mat-label>CRDB a/c number</mat-label>
+            <input matInput [formControl]="accnumber" required>
+            <mat-error *ngIf="accnumber.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-card-actions style="text-align: right;">
+            <button type="button" mat-button color="primary" (click)="completeOrder()" *ngIf="accnumber.valid"> 
+                Complete my order <mat-icon>check</mat-icon>
+            </button>
+        </mat-card-actions>
+
+        <mat-progress-bar mode="indeterminate" *ngIf="loader"></mat-progress-bar>
+    </mat-card>
+</div>
