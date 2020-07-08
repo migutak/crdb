@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckoutDialog } from './checkout/checkout-dialog.component';
-// import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatProgressBarModule} from '@angular/material/progress-bar'; 
@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
+    MatSnackBarModule,
     HttpClientModule
   ],
   providers: [],

@@ -45,35 +45,8 @@ export class AppComponent {
       name: 'Item 4',
       details: 'It\'s as cool as it sounds',
       heart: null,
-    },
-    {
-      price: 39.99,
-      image: null,
-      name: 'Item 5',
-      details: 'It\'s as cool as it sounds',
-      heart: null,
-    },
-    {
-      price: 9.99,
-      image: null,
-      name: 'Item 6',
-      details: 'It\'s as cool as it sounds',
-      heart: null,
-    },
-    {
-      price: 39.99,
-      image: null,
-      name: 'Item 7',
-      details: 'It\'s as cool as it sounds',
-      heart: null,
-    },
-    {
-      price: 9.99,
-      image: null,
-      name: 'Item 8',
-      details: 'It\'s as cool as it sounds',
-      heart: null,
     }
+    
   ];
 
 

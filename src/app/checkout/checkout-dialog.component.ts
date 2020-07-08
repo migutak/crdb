@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 export interface DialogData {
@@ -24,7 +25,8 @@ export class CheckoutDialog {
     items: Array<any>;
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: DialogData,
-        private http: HttpClient) {
+        private http: HttpClient,
+        private _snackBar: MatSnackBar) {
         this.subTot = data.total;
         this.tax = data.vat;
         this.items = data.items;
@@ -40,8 +42,10 @@ export class CheckoutDialog {
         const headers = { 'Authorization': 'Bearer ' + environment.auth, 'X-IBM-Client-Id': environment.clientid, 'X-IBM-Client-Secret': environment.clientsecret }
 
         this.http.post(environment.api, body, { headers }).subscribe(data => {
-            console.log(data);
             this.loader = false;
+            this._snackBar.open('Successfully processed', '', {
+                duration: 2000,
+              });
         }, error => {
             console.log(error);
             this.loader = false;
